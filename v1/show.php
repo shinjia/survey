@@ -1,17 +1,17 @@
 <?php
-$nickname = isset($_POST['nickname']) ? $_POST['nickname'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
-$gender   = isset($_POST['gender'])   ? $_POST['gender']   : '';
-$blood    = isset($_POST['blood'])    ? $_POST['blood']    : '';
-$birth_yy = isset($_POST['birth_yy']) ? $_POST['birth_yy'] : '';
-$birth_mm = isset($_POST['birth_mm']) ? $_POST['birth_mm'] : '';
-$birth_dd = isset($_POST['birth_dd']) ? $_POST['birth_dd'] : '';
-$marriage = isset($_POST['marriage']) ? $_POST['marriage'] : '';
-$hobby1   = isset($_POST['hobby1'])   ? $_POST['hobby1']   : '';
-$hobby2   = isset($_POST['hobby2'])   ? $_POST['hobby2']   : '';
-$hobby3   = isset($_POST['hobby3'])   ? $_POST['hobby3']   : '';
-$hobby4   = isset($_POST['hobby4'])   ? $_POST['hobby4']   : '';
-$intro    = isset($_POST['intro'])    ? $_POST['intro']    : '';
+$nickname = $_POST['nickname'] ?? '';
+$password = $_POST['password'] ?? '';
+$gender   = $_POST['gender']   ?? '';
+$blood    = $_POST['blood']    ?? '';
+$birth_yy = $_POST['birth_yy'] ?? '';
+$birth_mm = $_POST['birth_mm'] ?? '';
+$birth_dd = $_POST['birth_dd'] ?? '';
+$marriage = $_POST['marriage'] ?? '';
+$hobby1   = $_POST['hobby1']   ?? '';
+$hobby2   = $_POST['hobby2']   ?? '';
+$hobby3   = $_POST['hobby3']   ?? '';
+$hobby4   = $_POST['hobby4']   ?? '';
+$intro    = $_POST['intro']    ?? '';
 
 
 //  extract($_POST);   // 不安全
@@ -22,7 +22,8 @@ $html = <<< HEREDOC
 <!DOCTYPE html> 
 <html> 
 <head> 
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Survey</title> 
 </head> 
 
@@ -31,7 +32,7 @@ $html = <<< HEREDOC
 
 <p>姓名：{$nickname}</p>
 <p>密碼：{$password}</p>
-<p>性別：{$gender2}</p>
+<p>性別：{$gender}</p>
 <p>血型：{$blood}</p>
 <p>生日：{$birth_yy} 年 {$birth_mm} 月 {$birth_dd} 日</p>
 <p>已婚：{$marriage}</p>

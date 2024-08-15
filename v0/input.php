@@ -12,25 +12,25 @@
 
 <form method="post" action="show.php">
 
-  <p>姓名：<input type="text" name="nickname"></p>
+  <p>姓名：<input type="text"></p>
 
-  <p>密碼：<input type="password" name="password"></p>
+  <p>密碼：<input type="password"></p>
 
   <p>性別：
-  	<input type="radio" name="gender" value="M">男
-    <input type="radio" name="gender" value="F">女
+  	<input type="radio">男
+    <input type="radio">女
   </p>
 
   <p>血型：
-  	<input type="radio" name="blood" value="A">A
-  	<input type="radio" name="blood" value="B">B
-  	<input type="radio" name="blood" value="O">O
-  	<input type="radio" name="blood" value="AB">AB
-  	<input type="radio" name="blood" value="X" checked="checked">未知
+  	<input type="radio">A
+  	<input type="radio">B
+  	<input type="radio">O
+  	<input type="radio">AB
+  	<input type="radio">未知
   </p>
 
   <p>生日：
-  	<select name="birth_yy">
+  	<select>
       <option>2010</option>
       <option>2011</option>
       <option>2012</option>
@@ -42,7 +42,7 @@
       <option>2018</option>
   	</select>
   	年 
-  	<select name="birth_mm">
+  	<select>
   		<option value="1">一</option>
   		<option value="2">二</option>
   		<option value="3">三</option>
@@ -57,7 +57,7 @@
   		<option>12</option>
   	</select>
   	月
-  	<select name="birth_dd">
+  	<select>
   		<option>1</option>
   		<option>2</option>
   		<option>3</option>
@@ -93,17 +93,17 @@
   	日
   </p>
 
-  <p>是否已婚：<input type="checkbox" name="marriage" value="Y">(已婚請勾選)</p>
+  <p>是否已婚：<input type="checkbox">(已婚請勾選)</p>
 
   <p>休閒興趣：
-	  <input type="checkbox" name="hobby1" value="Y">音樂 
-	  <input type="checkbox" name="hobby2" value="Y">閱讀 
-	  <input type="checkbox" name="hobby3" value="Y">旅遊 
-	  <input type="checkbox" name="hobby4" value="Y">美食
+	  <input type="checkbox">音樂 
+	  <input type="checkbox">閱讀 
+	  <input type="checkbox">旅遊 
+	  <input type="checkbox">美食
   </p>
 
   <p>個人簡介：
-  	<textarea name="intro" rows="6" cols="40"></textarea>
+  	<textarea rows="6" cols="40"></textarea>
   </p>
 
   <p><input type="submit" value="送出"></p>

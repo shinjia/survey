@@ -1,38 +1,32 @@
 <?php
-$nickname = isset($_POST['nickname']) ? $_POST['nickname'] : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
-$gender   = isset($_POST['gender'])   ? $_POST['gender']   : '';
-$blood    = isset($_POST['blood'])    ? $_POST['blood']    : '';
-$birth_yy = isset($_POST['birth_yy']) ? $_POST['birth_yy'] : '';
-$birth_mm = isset($_POST['birth_mm']) ? $_POST['birth_mm'] : '';
-$birth_dd = isset($_POST['birth_dd']) ? $_POST['birth_dd'] : '';
-$marriage = isset($_POST['marriage']) ? $_POST['marriage'] : '';
-$hobby1   = isset($_POST['hobby1'])   ? $_POST['hobby1']   : '';
-$hobby2   = isset($_POST['hobby2'])   ? $_POST['hobby2']   : '';
-$hobby3   = isset($_POST['hobby3'])   ? $_POST['hobby3']   : '';
-$hobby4   = isset($_POST['hobby4'])   ? $_POST['hobby4']   : '';
-$intro    = isset($_POST['intro'])    ? $_POST['intro']    : '';
-
-
-//  extract($_POST);   // 不安全
+$nickname = $_POST['nickname'] ?? '';
+$password = $_POST['password'] ?? '';
+$gender   = $_POST['gender']   ?? '';
+$blood    = $_POST['blood']    ?? '';
+$birth_yy = $_POST['birth_yy'] ?? '';
+$birth_mm = $_POST['birth_mm'] ?? '';
+$birth_dd = $_POST['birth_dd'] ?? '';
+$marriage = $_POST['marriage'] ?? '';
+$hobby1   = $_POST['hobby1']   ?? '';
+$hobby2   = $_POST['hobby2']   ?? '';
+$hobby3   = $_POST['hobby3']   ?? '';
+$hobby4   = $_POST['hobby4']   ?? '';
+$intro    = $_POST['intro']    ?? '';
 
 
 // 處理姓名的狀況 (單一條件)
-if($nickname=='')
-{
+if($nickname=='') {
 	$nickname = '無名氏';
 }
 
 
 
 // 處理性別的輸入 (雙重條件)
-if( $gender=='M' )
-{
+if( $gender=='M' ) {
 	$str_gender1 = '先生';
 	$str_gender2 = '男';
 }
-else
-{
+else {
 	$str_gender1 = '小姐';
 	$str_gender2 = '女';
 }
@@ -41,24 +35,19 @@ else
 
 // 處理出生季節 (多重條件)
 $m = $birth_mm;
-if($m==3 || $m==4 || $m==5)
-{
+if($m==3 || $m==4 || $m==5) {
 	$str_season = '春天';
 }
-elseif( ($m==6) || ($m==7) || ($m==8) )
-{
+elseif( ($m==6) || ($m==7) || ($m==8) ) {
 	$str_season = '夏天';
 }
-elseif( $m>=9 && $m<=11 )
-{
+elseif( $m>=9 && $m<=11 ) {
 	$str_season = '秋天';
 }
-elseif( $m==12 || $m==1 || $m==2 )
-{
+elseif( $m==12 || $m==1 || $m==2 ) {
 	$str_season = '冬天';
 }
-else
-{
+else {
 	$str_season = '!!!!!不詳';  // 注意是有可能發生的
 	exit;
 }
@@ -71,8 +60,7 @@ $age = date('Y', time()) - $birth_yy;
 
 
 // 處理血型 (多重條件，根據一個變數的不同值進行判斷)
-switch($blood)
-{
+switch($blood) {
 	case 'A' :
 	case 'a' :
 		$str_blood = 'A型的你XXXXXX';			
@@ -97,24 +85,19 @@ switch($blood)
 
 
 // 另一種寫法
-if($blood=='A')
-{
+if($blood=='A') {
 	$str_blood = 'A型的你XXXXXX';
 }
-elseif($blood=='B')
-{
+elseif($blood=='B') {
 	$str_blood = 'B型的你XXXXXX';
 }
-elseif($blood=='O')
-{
+elseif($blood=='O') {
 	$str_blood = 'O型的你XXXXXX';
 }
-elseif($blood=='AB')
-{
+elseif($blood=='AB') {
 	$str_blood = 'AB型的你XXXXXX';
 }
-else
-{
+else {
 	$str_blood = '血型有誤!!!';
 }
 
@@ -123,8 +106,7 @@ else
 
 // 傳統的寫法，注意只有處理一個興趣，必須另外加上其他的hobby2, hobby3, hobby4
 $cnt = 0;
-if($hobby1=='Y')
-{
+if($hobby1=='Y') {
 	$cnt = $cnt + 1;
 	$cnt += 1;
 	$cnt++;
@@ -132,12 +114,10 @@ if($hobby1=='Y')
 
 
 /*
-if($hobby1=='Y')
-{
+if($hobby1=='Y') {
 	$cnt += 1;
 }
-else
-{
+else {
 	$cnt += 0;
 }
 
@@ -162,8 +142,6 @@ $str_hobby .= ( ($hobby3=='Y') ? '旅遊 ' : '' );
 $str_hobby .= ( ($hobby4=='Y') ? '閱讀 ' : '' );
 
 
-
-
 // 將密碼隱藏顯示，有幾個字就出現幾個星號
 $str_password = str_repeat('*', strlen($password) );
 
@@ -179,6 +157,7 @@ $html = <<< HEREDOC
 <html> 
 <head> 
 <meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Survey</title> 
 </head> 
 

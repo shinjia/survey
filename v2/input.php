@@ -4,18 +4,16 @@
 // 由大到小
 $str = '';
 $year_begin = 1900;
-$year_end = date('Y', time());  // 2017
-for($i=$year_end; $i>=$year_begin; $i--)
-{
+$year_end = date('Y', time());  // 2024
+for($i=$year_end; $i>=$year_begin; $i--) {
   $str .= '<option>' . $i . '</option>';
 }
 
 /*
 $str = '';
 $year_begin = 1900;
-$year_end = date('Y', time());  // 2017
-for($i=$year_begin; $i<=$year_end; $i++)
-{
+$year_end = date('Y', time());  // 2024
+for($i=$year_begin; $i<=$year_end; $i++) {
   $str .= '<option>' . $i . '</option>';
 }
 */
@@ -50,6 +48,7 @@ $html = <<< HEREDOC
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Survey</title>
 </head>
 
